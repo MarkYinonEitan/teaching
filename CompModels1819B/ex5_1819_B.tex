@@ -1,0 +1,92 @@
+%! program = pdflatex
+
+\documentclass[12pt]{article}
+\usepackage{amsthm}
+\usepackage{amsfonts,amsmath,amssymb,amsthm,amsmath}
+\usepackage{xspace}
+\usepackage{aliascnt}
+\usepackage{cleveref}
+
+
+\usepackage{geometry} % see geometry.pdf on how to lay out the page. There's lots.
+\usepackage{tikz}
+\geometry{a4paper} % or letter or a5paper or ... etc
+
+%\input{../../B_Helpers/CommonMacros}
+
+\newtheorem{theorem}{Theorem}%[section]
+% See the ``Article customise'' template for come common customisations
+
+\title{Exercise 5 - Computational Models - Spring 2019}
+\date{}
+
+%%% BEGIN DOCUMENT
+\begin{document}
+
+\maketitle
+
+The languages considered  below are with respect some fix alphabet $\Sigma$.
+
+\begin{enumerate}
+
+\item Let $A$, $B$ and $C$ languages over $\Sigma$. Prove/disprove:
+\begin{enumerate}
+    \item If $A \leq_m B$ and $B \leq_m C$ then $A \leq_m C$.
+    \item If $A \leq_m B$ and $B \leq_m A$ then $A = B$.
+    \item If $A \subseteq B$ then $A \leq_m B$.
+    \item For every $A$ and $B$, either $A \leq_m B$ or $B \leq_m A$.
+    \item If $A$ is not trivial and context-free then $A \leq_m H_{TM}$.
+\end{enumerate}
+
+\item Let $\cal{CFG}$ be the set of context-free languages. Prove/disprove:
+\begin{itemize}
+    \item For every $A \in \cal{CFG}$, $L_A = \{\langle G \rangle \mid G \text{ is a CFG and } L(G) = A\} \in
+    \cal{R}$
+    \item For every $\cal{C} \subsetneq \cal{CFG}$ with $|\cal{C}| >$ $1$,  \\$L_{\cal{C}} = \{\langle G\rangle \mid G\text{ is a CFG and }L(G) \in \cal{C}\} \not\in
+    \cal{R}$
+\end{itemize}
+
+\item
+For each of the following languages, find a minimal (relative to
+inclusion) class it belongs to (if any) between
+$\cal{R}$/$\cal{RE}$/co-$\cal{RE}$/not in
+$\cal{RE}\cup$co-$\cal{RE}$. Prove your answer.
+%\item $L = \{\langle M \rangle \mid  \text{in the computation of } M \text{ on }\varepsilon \text{ the head  moves left at most 2017 times}\}$
+    %\item $L = \{\langle M \rangle \mid  \text{in the computation of } M \text{ on }\varepsilon \text{ the head \textbf{never} moves three}\newline\text{ times \textbf{in a row} left}\}$
+\begin{enumerate}
+    \item $L = \{\langle M \rangle \mid \mbox{ M is a TM and } 010 \notin L(M) \}$
+    \item $L = \{\langle M \rangle \mid \mbox{ M is a TM and }  L(M) = 010 \}$
+    \item $L = \{\langle M \rangle \mid \mbox{ M is a TM and }  L(M) \subseteq L(0(1\cup0)^*)\}$
+    \item $L = \{\langle M \rangle \mid   \mbox{ M is a TM and }L(M) = L(0(1\cup0)^*)\}$
+
+\end{enumerate}
+
+\item  For each of the following languages, find a minimal (relative to
+inclusion) class it belongs to (if any) between
+$\cal{R}$/$\cal{RE}$/co-$\cal{RE}$/not in
+$\cal{RE}\cup$co-$\cal{RE}$. Prove your answer.
+\begin{enumerate}
+    \item $L = \{\langle M \rangle \mid  \exists x\ s.t.\  M\ \text{halt on } x\}$
+   
+    \item $L = \{\langle M\rangle \mid M \text{ is a TM and there exists an input that the TM } M \text{ accepts in}\newline\text{ less
+than 50 steps}\}$
+    \item $L = \{\langle M\rangle \mid | M \text{ is a TM and }L(M) \cup H_{TM} \in \cal{RE}\}$
+\end{enumerate}
+
+ \item
+For $L \subseteq \Sigma^*$ let $A(L) = \{0w \colon w \in L \} \cup
+\{1w \mid w \not\in L\}$
+\begin{enumerate}
+    \item Prove that if $L \not\in R$ then $A(L) \not\in \cal{RE}$
+    \item Prove or contradict: $\forall L \subseteq \Sigma^*$ if $L \leq_M
+    \bar{L}$ then $L \in \cal{R}$ \\ \textbf{Hint:} use $A(L)$ as $L \not\in \cal{R}$
+\end{enumerate}
+
+
+
+\end{enumerate}
+
+
+
+
+\end{document}
